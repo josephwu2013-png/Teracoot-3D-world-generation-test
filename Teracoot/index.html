@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teracoot Terrain Test</title>
+    <link rel="stylesheet" href="./style.css?v=65" />
+  </head>
+  <body>
+    <div class="underwater-overlay" id="underwater-overlay" aria-hidden="true"></div>
+    <div class="feedback-layer" id="feedback-layer" aria-hidden="true"></div>
+    <div class="inventory-bar" id="inventory-bar" aria-label="Inventory bar"></div>
+    <div class="survival-panel" id="survival-panel" hidden>
+      <div class="survival-card">
+        <div class="survival-header">
+          <h2>Survival Kit</h2>
+          <p>Craft, smelt, eat, and equip. Press C, I, or Esc to close.</p>
+        </div>
+        <div class="survival-status" id="station-summary">No stations nearby.</div>
+        <div class="survival-columns">
+          <section class="survival-column">
+            <h3>Inventory</h3>
+            <div class="inventory-list" id="inventory-list"></div>
+          </section>
+          <section class="survival-column">
+            <h3>Craft</h3>
+            <div class="recipe-grid" id="crafting-grid"></div>
+          </section>
+          <section class="survival-column">
+            <h3>Furnace</h3>
+            <div class="recipe-grid" id="furnace-grid"></div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="block-palette" id="block-palette" hidden>
+      <div class="block-palette-card">
+        <div class="block-palette-header">
+          <h2>Block Palette</h2>
+          <p>Click a block to equip it, then press Q to build. Press B or Esc to close.</p>
+        </div>
+        <div class="block-grid" id="block-grid"></div>
+      </div>
+    </div>
+    <div class="hud">
+      <div class="panel">
+        <h1>Teracoot</h1>
+        <p>3D world generation test</p>
+        <p>WASD move</p>
+        <p>Mouse look</p>
+        <p>Shift sprint / dive / fly down</p>
+        <p>Space hop / swim up / fly up</p>
+        <p>L toggle fly mode</p>
+        <p>M toggle creative / survival</p>
+        <p>B open all blocks</p>
+        <p>C open crafting + furnace</p>
+        <p>I open inventory</p>
+        <p>1-9 select from inventory bar</p>
+        <p>Q place selected block</p>
+        <p>X eat cooked pork</p>
+        <p>R random terrain</p>
+        <p>V toggle view</p>
+        <p>Click or hold left mouse to mine</p>
+        <p>Mine trees for planks</p>
+        <p>Mine terrain, caves, pigs, and ores for survival</p>
+        <p>Structures can spawn furnaces and crafting spots</p>
+        <div class="hud-status-row">
+          <span>Mode</span>
+          <button class="hud-button" id="mode-toggle" type="button">Survival</button>
+        </div>
+        <p>Health <span id="health-value">100</span></p>
+        <p>Gear <span id="gear-value">None</span></p>
+        <p>Nearby <span id="station-value">None</span></p>
+        <p>Selected <span id="build-material-value">Planks</span></p>
+        <p>Planks <span id="plank-value">0</span></p>
+        <p>Stone <span id="stone-value">0</span></p>
+        <div class="inventory-compact" id="inventory-compact"></div>
+        <p>Seed <span id="seed-value">--</span></p>
+        <div class="view-settings" aria-label="View settings">
+          <div class="settings-row">
+            <span>FOV</span>
+            <span id="fov-value">72</span>
+          </div>
+          <input
+            class="settings-slider"
+            id="fov"
+            type="range"
+            min="50"
+            max="110"
+            step="1"
+            value="72"
+          />
+        </div>
+      </div>
+      <div class="fps-meter" id="fps-meter" aria-label="Frames per second">
+        <div class="fps-row">
+          <span>FPS</span>
+          <span id="fps-value">0</span>
+        </div>
+        <div class="fps-track">
+          <div class="fps-fill" id="fps-fill"></div>
+        </div>
+      </div>
+      <div class="coords" id="coords">x: 0.0 z: 0.0 h: 0.0</div>
+    </div>
+    <button class="launch" id="launch" type="button">Click To Explore</button>
+    <button class="world-reroll" id="randomize-world" type="button">Random Terrain</button>
+    <div class="crosshair" aria-hidden="true"></div>
+    <script type="module" src="./main.js?v=65"></script>
+  </body>
+</html>
